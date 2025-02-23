@@ -33,4 +33,10 @@ public class UserController {
         return info;
 
     }
+
+    @GetMapping("/node")
+    public String callNodeService() {
+        String nodeServiceUrl = "http://localhost:8085/hello";
+        return restTemplate.getForObject(nodeServiceUrl, String.class);
+    }
 }
